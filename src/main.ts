@@ -76,7 +76,7 @@ async function installDanger(option: Option) {
 
 // ignore:  {RubyPath}/gems/2.6.0/gems/git-1.5.0/lib/git/lib.rb:1029: warning: Insecure world writable dir {RubyBinPath} in PATH, mode 040777
 async function ignoreRubyWarning() {
-    // await core.exportVariable("RUBYOPT", "-W0");
+    await core.exportVariable("RUBYOPT", "-W0");
 }
 
 async function runDanger(option: Option) {
@@ -110,7 +110,7 @@ async function run() {
         const option = await getOption();
         await escapeGemfile(option);
         await installDanger(option);
-        await ignoreRubyWarning();
+        // await ignoreRubyWarning();
         await runDanger(option);
         await unescapeGemfile();
     } catch (error) {
