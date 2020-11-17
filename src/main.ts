@@ -110,7 +110,7 @@ async function run() {
         const option = await getOption();
         await escapeGemfile(option);
         await installDanger(option);
-        // await ignoreRubyWarning();
+        await ignoreRubyWarning();
         await runDanger(option);
         await unescapeGemfile();
     } catch (error) {

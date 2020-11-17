@@ -1169,7 +1169,7 @@ function run() {
             const option = yield getOption();
             yield escapeGemfile(option);
             yield installDanger(option);
-            // await ignoreRubyWarning();
+            yield ignoreRubyWarning();
             yield runDanger(option);
             yield unescapeGemfile();
         }
